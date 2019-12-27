@@ -1,0 +1,36 @@
+{
+  "name": "wl-mapper",
+  "version": "1.0.0",
+  "description": "一个js对象映射类，尝试解决前后端分离大量字段名不对应问题",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lib": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hql7/wl-mapper.git"
+  },
+  "keywords": [
+    "mapper",
+    "mapperjs",
+    "映射",
+    "前端映射类",
+    "前后端分离"
+  ],
+  "author": "weilan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hql7/wl-mapper/issues"
+  },
+  "homepage": "https://github.com/hql7/wl-mapper#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  }
+}
