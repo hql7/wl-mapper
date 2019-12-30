@@ -2,7 +2,7 @@
   "name": "wl-mapper",
   "version": "1.0.0",
   "description": "一个js对象映射类，尝试解决前后端分离大量字段名不对应问题",
-  "main": "index.js",
+  "main": "lib/wl-mapper.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lib": "webpack"
@@ -27,9 +27,7 @@
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
-    "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
-    "babel-preset-es2015": "^6.24.1",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10"
   }
