@@ -1,33 +1,10 @@
 const path = require('path');
 
-const es5mapper = {
-  mode: "production",
-  entry: './src/wlmapper.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'wl-mapper-es5.js'
-  },
-  module: {
-    rules: [{
-      test: /\.js$/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ["@babel/preset-env"]
-        }
-      },
-      exclude: /node_modules/
-    }]
-  }
-}
-
-const minmapper = {
-  mode: "production",
-  entry: './src/wlmapper.js',
+module.exports = {
+  mode: 'production',
+  entry: './src/wl-mapper.js',
   output: {
     path: path.resolve(__dirname, 'lib'),
     filename: 'wl-mapper.min.js'
-  },
+  }
 }
-
-module.exports = [es5mapper, minmapper]

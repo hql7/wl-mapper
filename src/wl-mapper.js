@@ -4,7 +4,7 @@
  * 用于后台返回字段与前端定义参数建立映射关系
  */
 
-class WlMapper {
+ class WlMapper {
   /**
    * 初始设定
    * @param {*} src 目标对象
@@ -79,11 +79,11 @@ class WlMapper {
   arrMapper(mapper/* : Object */, deep_src/* :Object */ = this._src, deep_source/* :Object */ = this._source) {
     for (const item of deep_source) {
       deep_src.push(item);
-      if (this.isObj(item[mapper[i]])) {
+      if (this.isObj(item)) {
         this.objMapper(mapper, true, item, item);
         continue
       }
-      if (this.isArr(item[mapper[i]])) {
+      if (this.isArr(item)) {
         this.arrMapper(mapper, item, item);
         continue
       }
@@ -117,6 +117,7 @@ class WlMapper {
    * @param {*} data 数据
    */
   isObj(data) {
+    // return data.constructor == Object;
     return Object.prototype.toString.call(data) === '[object Object]';
   }
 
@@ -131,23 +132,3 @@ class WlMapper {
 }
 
 export default WlMapper;
-
-/* 
- *  
-    // 操作一下试试
-    import WlMapper from "@/util/wlmapper";
-
-    let aa = { x: { h: 8 }, y: 1 };
-    let bb = { y: { e: 12, ff: "0001" }, f: 4, id: "0000" };
-    
-    let mapper1 = new WlMapper(aa, bb, ["id"]);
-    let mapper2 = new WlMapper(aa, bb, ["id"]);
-    let mapper3 = new WlMapper(aa, bb);
-
-    console.log(mapper1.mapper("x", "y"));
-    console.log(mapper2.objMapper({ x: "y", y: "f", h: "e" }, true));
-    console.log(
-      mapper3.objMapper({ x: "y", y: "f", h: "e" }, true).merge(["id"])
-    );
- *
- */
